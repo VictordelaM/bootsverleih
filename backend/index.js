@@ -9,11 +9,14 @@ import bootRouter from './controller/boot.js'
 const PORT = 3000
 const app = express()
 
+app.use("/boote", bootRouter)
+// app.use(express.json()) --- we dunno!
+
+await mongoose.connect(process.env.MONGODB_URI)
 
 app.use(cors({origin: "http://localhost:5173"}))
 app.use(morgan('tiny'))
-
-await mongoose.connect(process.env.MONGODB_URI)
+// log requests (morgan)
 
 
 app.use('/boote', bootRouter)
