@@ -3,6 +3,7 @@ import multer from 'multer'
 import express from 'express'
 import 'dotenv/config'
 import mongoose from 'mongoose'
+import morgan from 'morgan'
 
 const PORT = 3000
 const app = express()
@@ -10,6 +11,7 @@ const mult = multer()
 
 
 app.use(cors({origin: "http://localhost:5173"}))
+app.use(morgan('tiny'))
 
 await mongoose.connect(process.env.MONGODB_URI)
 
