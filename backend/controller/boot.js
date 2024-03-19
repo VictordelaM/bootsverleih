@@ -29,4 +29,31 @@ router.get("/", async (req, res)=>{
     res.json(boote)
 })
 
+
+// AB HIER APACHE.
+
+// router.patch("/", mult.none(), async (req, res)=>{
+//     const boote = await Boot
+
+// })
+
+
+// const filter = { name: 'Jean-Luc Picard' };
+// const update = { age: 59 };
+
+// let doc = await Character.findOne({ name: 'Jean-Luc Picard' });
+
+// // Document changed in MongoDB, but not in Mongoose
+// await Character.updateOne(filter, { name: 'Will Riker' });
+
+// // This will update `doc` age to `59`, even though the doc changed.
+// doc.age = update.age;
+// await doc.save();
+
+// doc = await Character.findOne();
+// doc.name; // Will Riker
+// doc.age; // 59
+
+
+
 export default router 
