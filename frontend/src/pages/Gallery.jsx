@@ -29,6 +29,7 @@ const Gallery = () => {
             <p>{dat.seats}</p>
             <p>{dat.horsePower}</p>
             <img src={dat.imageURL}/>
+            <a href={`/boot/${dat._id}`}><button>Details</button></a>
             </div>
 
         )
