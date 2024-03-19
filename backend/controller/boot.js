@@ -25,9 +25,12 @@ router.post("/", mult.none(), async(req,res)=>{
 
 router.get("/", async (req, res)=>{
     const boote = await Boot.find().lean()
-    console.log(boote);
+    // console.log(boote);
     res.json(boote)
 })
+
+// router.delete("/", async (req, res)=>{
+// })
 
 
 // AB HIER APACHE.
