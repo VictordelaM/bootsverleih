@@ -6,6 +6,7 @@ import Booking from './pages/Booking'
 import Gallery from './pages/Gallery'
 import DetailPage from './pages/DetailPage'
 import Admin from './pages/Admin'
+import About from './pages/About'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <Route path='/gallery' element={<Gallery/>}/>
     <Route path='/deatilPage' element={<DetailPage/>}/>
     <Route path='/admin' element={<Admin/>}/>
+    <Route path='/about' element={<About/>}/>
     </Routes>
       
     </>
