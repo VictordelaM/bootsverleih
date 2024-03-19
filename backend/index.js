@@ -18,6 +18,7 @@ const mult = multer()
 
 
 
+
 app.use(cors({origin: "http://localhost:5173"}))
 app.use(morgan('tiny'))
 // log requests (morgan)

@@ -27,4 +27,6 @@ const bootModel = new Schema(
     }
 )
 
-export const Boot = mongoose.model("Boot", bootModel, "Boote")
+export const Boot = mongoose.model("Boot", bootModel, "boote")
+
+//                                 (ModelName, SCHEMA, collection)
