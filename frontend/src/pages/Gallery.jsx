@@ -19,21 +19,27 @@ const Gallery = () => {
   console.log(data);
 
   return (
-    <div>
+    <div className='grid grid-cols-3 auto-rows-max gap-4'>
       {data.map((dat)=>{
         return(
 
-          <div key={dat.name}>
-            <h3>{dat.name}</h3>
-            <p>{dat.rating}</p>
-            <p>{dat.seats}</p>
-            <p>{dat.horsePower}</p>
-            <img src={dat.imageURL}/>
-            <a href={`/boot/${dat._id}`}><button>Details</button></a>
+          <div key={dat.name} className='card w-96 bg-base-100 shadow-xl'>
+            <figure><img src={dat.imageURL}/></figure>
+            <div className='card-body'>
+              <h2 className='card-title'>{dat.name}</h2>
+              <p>{dat.rating} ⭐</p>
+              <p>{dat.seats} Sitze</p>
+              <p>{dat.horsePower}</p>
+            
+            <div className='card-actions justify-end'>
+              <a href={`/boot/${dat._id}`} className='btn btn-primary'>Details</a>
+              </div>
+            </div>
             </div>
 
         )
       })}
+
     </div>
   )
 }
