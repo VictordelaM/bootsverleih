@@ -77,7 +77,8 @@ const DetailPage = () => {
         >
           Boot
         </label>
-        <select
+        <input
+          type="text"
           name="boot"
           className="block flex-1 border-0 bg-transparent py-1.5 pl-1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
           onChange={(e) =>
@@ -87,13 +88,7 @@ const DetailPage = () => {
             }))
           }
         >
-
-          {data.map((dat) => {
-            return (
-            <option key={dat._id} value={dat._id}>{dat.name}</option>
-            )
-          })}
-          </select>
+          </input>
                 <label
           htmlFor="rating"
           className="block text-sm font-medium leading-6"

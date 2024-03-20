@@ -4,6 +4,7 @@ const Booking = () => {
   const [reservationData, setReservationData] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [data, setData] = useState([])
+  const [fetchToggle, setFetchToggle] = useState([])
   
   useEffect(()=>{
     fetch("http://localhost:3000/boote")
@@ -23,19 +24,20 @@ const Booking = () => {
       setReservationData(json)
       )
     })
-  }, [])
+  }, [fetchToggle])
 
-  const handleSubmit = (event) =>{
+  const handleSubmit = async (event) =>{
     event.preventDefault()
     const form = event.target
     const formData = new FormData(form)
-    fetch(`http://localhost:3000/reservierungen/`, {
+    await fetch(`http://localhost:3000/reservierungen/`, {
       method: "POST",
       body: formData
   } )
-  setFormReservationData(formReservationData)
   setReservationData(reservationData)
   setFetchToggle(!fetchToggle)
+  setShowModal(false)
+  console.log(showModal)
 };
 
   return (

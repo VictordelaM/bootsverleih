@@ -48,8 +48,8 @@ router.patch("/details/:id", mult.none(), async (req, res) => {
     // update ist ein Objekt, das die neuen Werte enthält, aus dem Body der Anfrage (req.body)
     boot: req.body.boot,
   };
-  console.log(update);
   let doc = await reservierungen.findOneAndUpdate(filter, update); // sucht das boot mit der id aus der url (variabel filter) und updated es mit den neuen werten (variabel update)
+  res.json(doc);
 });
 
 export default router;

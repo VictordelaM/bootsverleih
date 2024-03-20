@@ -31,14 +31,14 @@ const BookingDetail = () => {
         setReservationData(data);
         setFormReservationData(data);
       });
-  }, [reservationID.id]);
+  }, [fetchToggle, reservationID.id]);
 
 
-  const handleSubmit = (event) =>{
+  const handleSubmit = async (event) =>{
       event.preventDefault()
       const form = event.target
       const formData = new FormData(form)
-      fetch(`http://localhost:3000/reservierungen/details/${reservationID.id}`, {
+      await fetch(`http://localhost:3000/reservierungen/details/${reservationID.id}`, {
         method: "PATCH",
         body: formData
     } )
