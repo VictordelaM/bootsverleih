@@ -5,6 +5,7 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import bootRouter from "./controller/boot.js";
+import reservationenRouter from "./controller/reservation.js";
 
 const PORT = 3000;
 const app = express();
@@ -16,6 +17,7 @@ app.use(cors({ origin: "http://localhost:5173" }));
 app.use(morgan("dev"));
 // log requests (morgan)
 app.use("/boote", bootRouter);
+app.use("/reservierungen", reservationenRouter);
 
 await mongoose.connect(process.env.MONGODB_URI);
 
