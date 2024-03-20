@@ -29,7 +29,7 @@ const Gallery = () => {
               <h2 className='card-title'>{dat.name}</h2>
               <p>{dat.rating} ⭐</p>
               <p>{dat.seats} Sitze</p>
-              <p>{dat.horsePower}</p>
+              <p>{dat.horsePower} PS</p>
             
             <div className='card-actions justify-end'>
               <a href={`/boot/${dat._id}`} className='btn btn-primary'>Details</a>
