@@ -31,7 +31,7 @@ const BookingDetail = () => {
         setReservationData(data);
         setFormReservationData(data);
       });
-  }, [reservationData, reservationID.id]);
+  }, [reservationID.id]);
 
 
   const handleSubmit = (event) =>{

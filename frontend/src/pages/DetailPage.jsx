@@ -4,10 +4,21 @@ import { useNavigate, useParams } from "react-router-dom";
 const DetailPage = () => {
   const [bootData, setBootData] = useState([]);
   const [formBootData, setFormBootData] = useState([]);
+  const [data, setData] = useState([])
   const navigate = useNavigate();
 
 
   const bootID = useParams();
+
+  useEffect(()=>{
+    fetch("http://localhost:3000/boote")
+    .then((response)=> response.json())
+    .then((json)=>{
+      return(
+        setData(json)
+      )
+    })
+  }, [])
 
   useEffect(() => {
     fetch(`http://localhost:3000/boote/details/${bootID.id}`)
@@ -60,24 +71,29 @@ const DetailPage = () => {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <label
+      <label
           htmlFor="name"
           className="block text-sm font-medium leading-6"
         >
-          Name
+          Boot
         </label>
-        <input
-          type="text"
-          name="name"
+        <select
+          name="boot"
           className="block flex-1 border-0 bg-transparent py-1.5 pl-1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-          value={formBootData.name}
           onChange={(e) =>
             setFormBootData((prevState) => ({
               ...prevState,
-              name: e.target.value,
+              boot: e.target.value
             }))
           }
-        />
+        >
+
+          {data.map((dat) => {
+            return (
+            <option key={dat._id} value={dat._id}>{dat.name}</option>
+            )
+          })}
+          </select>
                 <label
           htmlFor="rating"
           className="block text-sm font-medium leading-6"
